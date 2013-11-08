@@ -1,10 +1,13 @@
 <h1>Products</h1>
 
+<ul>
 <% @products.each do |product| %>
-  <div class="product-wrapper">
-    <a href="<%= product_path(product) %>"><%= product.name %></a>
-  </div>
+  <li>
+    <div class="product-wrapper">
+      <a href="<%= product_path(product) %>"><%= product.name %></a><span>: $<%= product.formatted_price %></span>
+    </div> 
+  </li>
 <% end %>
-<br>
+</ul> 
 <%= link_to "New Product", new_product_path %>
 

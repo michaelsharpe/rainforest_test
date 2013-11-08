@@ -1,6 +1,6 @@
 <div class="show-product">
   <h2><%= @product.name %></h2>
   <p><%= @product.description %></p>
-  <p>Price: $<%= @product.price_in_cents %></p>
+  <p>Price: $<%= @product.formatted_price %></p>
   <%= link_to "Home", products_path %>
 </div>
