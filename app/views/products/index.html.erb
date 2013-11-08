@@ -1,4 +1,19 @@
 <h1>Products</h1>
+<% if flash[:notice] %>
+  <p id= "notice"><%= flash[:notice] %></p>
+<% end %>
+
+<% if flash["alert"] %>
+  <p id="alert"><% flash[:alert] %></p>
+<% end %>
+
+<% if current_user %>
+  <p>Logged in as <%= current_user.email %>  
+  <%= link_to "Log out", log_out_path %></p>
+<% else %>
+  <%= link_to "Sign In", log_in_path %>
+  <%= link_to "Sign Up", sign_up_path %>
+<% end %>
 
 <ul>
 <% @products.each do |product| %>
