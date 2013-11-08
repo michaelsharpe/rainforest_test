@@ -1,0 +1,10 @@
+<h1>Products</h1>
+
+<% @products.each do |product| %>
+  <div class="product-wrapper">
+    <a href="<%= product_path(product) %>"><%= product.name %></a>
+  </div>
+<% end %>
+<br>
+<%= link_to "New Product", new_product_path %>
+
