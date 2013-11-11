@@ -1,28 +1,39 @@
-<h1>Products</h1>
-<% if flash[:notice] %>
-  <p id= "notice"><%= flash[:notice] %></p>
-<% end %>
+<div class="all-products">
+  <div class="row">
+    <h1 class="centered">Products</h1>
+    <% if flash[:notice] %>
+      <p id= "notice"><%= flash[:notice] %></p>
+    <% end %>
 
-<% if flash["alert"] %>
-  <p id="alert"><% flash[:alert] %></p>
-<% end %>
+    <% if flash["alert"] %>
+      <p id="alert"><% flash[:alert] %></p>
+    <% end %>
 
-<% if current_user %>
-  <p>Logged in as <%= current_user.email %>  
-  <%= link_to "Log out", log_out_path %></p>
-<% else %>
-  <%= link_to "Sign In", log_in_path %> or
-  <%= link_to "Sign Up", sign_up_path %>
-<% end %>
+    <% if current_user %>
+      <p>Logged in as <%= current_user.email %>  
+      <%= link_to "Log out", log_out_path %></p>
+    <% else %>
+      <%= link_to "Sign In", log_in_path %> or
+      <%= link_to "Sign Up", sign_up_path %>
+    <% end %>
+    <br>
+    <br>
+    <ul class="large-block-grid-4">
+    <% @products.each do |product| %>
+      <li>
+        <div class="product-wrapper">
+          <p class="centered"><%= product.name %></p>
+          <div class="image-wrapper">
+            <a href="<%= product_path(product) %>"><img src="<%= product.url %> " alt=""></a>
+          </div>
+          <p class="centered"><%= product.price_in_cents %></p>
+        </div> 
+      </li>
+    <% end %>
+    </ul> 
+    <div class="product-controls">
+          <%= link_to "New Product", new_product_path, class: "button small centered" %>      
+    </div>
 
-<ul>
-<% @products.each do |product| %>
-  <li>
-    <div class="product-wrapper">
-      <a href="<%= product_path(product) %>"><%= product.name %></a><span>: $<%= product.formatted_price %></span>
-    </div> 
-  </li>
-<% end %>
-</ul> 
-<%= link_to "New Product", new_product_path %>
-
+  </div>
+</div>

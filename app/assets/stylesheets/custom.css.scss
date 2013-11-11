@@ -1,0 +1,12 @@
+@import 'foundation_and_overrides';
+
+li {
+  list-style: none;
+}
+
+ .main-page {
+  @extend .large-12;
+  @extend .columns;
+  @extend .large-centered;
+}
+

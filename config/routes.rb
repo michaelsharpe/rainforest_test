@@ -1,14 +1,9 @@
 RainforestTest::Application.routes.draw do
-  get "reviews/show"
-  get "reviews/new"
-  get "reviews/edit"
-  get "show/new"
-  get "show/edit"
+  root :to => "products#index"
   get "log_in" => "sessions#new"
   get "log_out" => "sessions#destroy"
   get "sign_up" => "users#new"
-  root :to => "products#index"
-  resources :products
+  
   resources :users, :only => [:new, :create]
   resources :sessions, :only => [:new, :create, :destroy]
 

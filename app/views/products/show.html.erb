@@ -2,6 +2,7 @@
   <h2><%= @product.name %></h2>
   <p><%= @product.description %></p>
   <p>Price: $<%= @product.formatted_price %></p>
+  <%= link_to "Edit", edit_product_path %>
   <%= link_to "Home", products_path %>
 </div>
 
@@ -18,8 +19,10 @@
       <% if review.user != nil %>
         <em> by <%= review.user.email %></em>
         Added on: <%= review.created_at %>
+        <%= link_to "Delete", [review.product, review], method: :delete, data:{ confirm: "Are you sure?" } %>
       <% end %>
     </p>
+
   <% end %>
 
   <h4>New Review</h4>

@@ -1,0 +1,14 @@
+users have_one profile
+
+user has_many reviews
+product has_many reviews
+review belongs_to picture
+review belongs_to person
+user has_many products, through reviews
+
+user has_one shopping cart
+shopping_cart belongs_to user
+shopping_cart has_many products
+user has_many products, through shopping_cart
+
+

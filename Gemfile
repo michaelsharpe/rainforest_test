@@ -27,6 +27,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+#Zurb foundation
+gem 'zurb-foundation'
+
 #Foundation icon set
 gem 'foundation-icons-sass-rails'
 

@@ -1,5 +1,7 @@
-<h2>Add a picture</h2>
+<div class="form-wrapper">
+  <h2>Add a product</h2>
 
-<%= render partial: 'product_form', locals: {product: @product} %>
-<br>
-<%= link_to "Home", products_path %>
+  <%= render partial: 'product_form', locals: {product: @product} %>
+  <br>
+  <%= link_to "Home", products_path %>
+</div>
